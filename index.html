@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Email-Phone</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>‌ahmadreza</h1>
+      <div class="btns">
+        <span class="tab-indicator"></span>
+        <button class="btn active" data-target="calculateForm">
+          Calculator
+        </button>
+        <button class="btn" data-target="isPrimeForm">isPrime ?</button>
+      </div>
+      <div class="forms">
+        <form action="" id="calculateForm" class="form active">
+          <h2>calculate</h2>
+          <div>
+            <div>
+              <div>
+                <label for="firstNumber">First Number: </label>
+                <input type="number" id="firstNumber" />
+              </div>
+              <div>
+                <label for="secondNumber">Second Number: </label>
+                <input type="number" id="secondNumber" />
+              </div>
+            </div>
+            <p class="calculateError"></p>
+            <div class="operators">
+              <label>
+                <input type="radio" name="operator" value="+" checked />
+                <svg
+                  fill="#fff"
+                  viewBox="-3 0 19 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cf-icon-svg"
+                >
+                  <title>plus</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M12.711 9.182a1.03 1.03 0 0 1-1.03 1.03H7.53v4.152a1.03 1.03 0 0 1-2.058 0v-4.152H1.318a1.03 1.03 0 1 1 0-2.059h4.153V4.001a1.03 1.03 0 0 1 2.058 0v4.152h4.153a1.03 1.03 0 0 1 1.029 1.03z"
+                    ></path>
+                  </g>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="operator" value="-" />
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="#fff"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>minus</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M6 12L18 12"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="operator" value="*" />
+                <svg
+                  fill="#fff"
+                  viewBox="-3.5 0 19 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cf-icon-svg"
+                >
+                  <title>multiply</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M11.383 13.644A1.03 1.03 0 0 1 9.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 1 1-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 1 1 1.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 0 1 1.455 1.456L7.455 9.716z"
+                    ></path>
+                  </g>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="operator" value="/" />
+                <svg
+                  fill="#fff"
+                  viewBox="-3 0 19 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cf-icon-svg"
+                >
+                  <title>divide</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M12.711 9.182a1.03 1.03 0 0 1-1.03 1.03H1.319a1.03 1.03 0 1 1 0-2.059h10.364a1.03 1.03 0 0 1 1.029 1.03zM5.03 4.586a1.47 1.47 0 1 1 1.47 1.47 1.47 1.47 0 0 1-1.47-1.47zm2.94 9.193a1.47 1.47 0 1 1-1.47-1.47 1.47 1.47 0 0 1 1.47 1.47z"
+                    ></path>
+                  </g>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="operator" value="**" />
+                <svg
+                  fill="#fff"
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 31.773 31.773"
+                  xml:space="preserve"
+                >
+                  <title>power</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g>
+                      <path
+                        d="M15.383,18.945l7.761,12.506h-5.398l-3.48-5.825c-0.533-0.9-1.041-1.812-1.527-2.736l-0.498-0.959l-0.515-0.941h-0.07 l-0.515,0.959c-0.617,1.162-1.315,2.389-2.099,3.68l-3.498,5.826H0l7.959-12.508L0.57,7.206h5.489l3.23,5.399 c0.512,0.854,0.989,1.693,1.438,2.521l0.445,0.852l0.442,0.855h0.07c0.201-0.379,0.35-0.663,0.445-0.855l0.442-0.834 c0.379-0.733,0.854-1.574,1.422-2.521l3.231-5.418h5.436L15.383,18.945z M25.164,10.014c0-0.82,0.111-1.316,0.334-1.49 c0.223-0.176,1.02-0.387,2.393-0.637c1.664-0.309,2.729-0.693,3.189-1.15c0.461-0.459,0.689-1.366,0.689-2.723 c0-1.436-0.303-2.41-0.908-2.924c-0.607-0.512-1.762-0.771-3.457-0.771c-1.738,0-2.91,0.255-3.516,0.763 c-0.604,0.506-0.906,1.492-0.906,2.957v0.485h2.174V4.03c0-0.85,0.127-1.385,0.383-1.604c0.258-0.219,0.875-0.33,1.854-0.33 c0.953,0,1.557,0.109,1.811,0.326c0.254,0.217,0.381,0.729,0.381,1.539c0,0.842-0.127,1.365-0.381,1.567 c-0.254,0.201-1.066,0.427-2.439,0.671c-1.658,0.297-2.709,0.646-3.15,1.051c-0.439,0.405-0.66,1.225-0.66,2.455v2.377h8.82v-1.754 h-6.607L25.164,10.014L25.164,10.014z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="operator" value="%" />
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>modulo</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6ZM4 8C4 5.79086 5.79086 4 8 4C10.2091 4 12 5.79086 12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8ZM17 15C15.8954 15 15 15.8954 15 17C15 18.1046 15.8954 19 17 19C18.1046 19 19 18.1046 19 17C19 15.8954 18.1046 15 17 15ZM13 17C13 14.7909 14.7909 13 17 13C19.2091 13 21 14.7909 21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17ZM19.7071 6.70711C20.0976 6.31658 20.0976 5.68342 19.7071 5.29289C19.3166 4.90237 18.6834 4.90237 18.2929 5.29289L5.29289 18.2929C4.90237 18.6834 4.90237 19.3166 5.29289 19.7071C5.68342 20.0976 6.31658 20.0976 6.70711 19.7071L19.7071 6.70711Z"
+                      fill="#fff"
+                    ></path>
+                  </g>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="operator" value="//" />
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>integer division</title>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M7 22L17 2"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </svg>
+              </label>
+            </div>
+            <button type="submit" id="calculateButton">Calculate</button>
+          </div>
+          <span class="calculateResult"></span>
+        </form>
+        <form action="" id="isPrimeForm" class="form">
+          <h2>isPrime ?</h2>
+          <div>
+            <div>
+              <label for="primeNumber">Number: </label>
+              <input type="number" id="primeNumber" />
+            </div>
+            <p class="isPrimeError"></p>
+            <button type="submit" id="isPrimeButton">Check</button>
+          </div>
+          <span class="isPrimeResult"></span>
+        </form>
+      </div>
+    </main>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

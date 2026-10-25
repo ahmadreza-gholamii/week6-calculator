@@ -1,0 +1,308 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-1: #080b14;
+  --bg-2: #111827;
+  --panel: rgba(17, 24, 39, 0.82);
+  --text: #f1f5f9;
+  --primary: #8b5cf6;
+  --success: #34d399;
+  --error: #fb7185;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(139, 92, 246, 0.28), transparent 28%),
+    linear-gradient(140deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-2) 100%);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.container {
+  width: min(100%, 440px);
+  max-height: calc(100vh - 104px);
+  margin: 20px auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: 0.04em;
+}
+
+.btns {
+  position: relative;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.tab-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(50% - 5px);
+  background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.45);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.btn {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: transparent;
+  color: var(--text);
+  padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.3rem);
+  border-radius: 14px;
+  font-size: clamp(1.15rem, 1.6vw, 1.25rem);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.active {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.forms {
+  position: relative;
+  width: 100%;
+  display: grid;
+  align-items: start;
+}
+
+.form {
+  grid-area: 1 / 1;
+  display: block;
+  background: var(--panel);
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.98);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.form.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.form h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+}
+
+.form label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+}
+
+.form input[type="number"] {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  font-size: clamp(0.95rem, 1.4vw, 1rem);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.operators {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.form input[type="number"]:focus {
+  outline: none;
+  border-color: rgba(167, 139, 250, 0.9);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+}
+
+.form input[type="radio"] {
+  display: none;
+}
+
+.form label:has(input[type="radio"]) {
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  margin-right: 10px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  opacity: 0.8;
+}
+
+.form label:has(input[type="radio"]):hover {
+  transform: translateY(-1px);
+  border-color: rgba(167, 139, 250, 0.7);
+}
+
+.form label:has(input[type="radio"]:checked) {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.22),
+    rgba(99, 102, 241, 0.32)
+  );
+  border-color: rgba(167, 139, 250, 0.9);
+  box-shadow: 0 12px 24px rgba(139, 92, 246, 0.2);
+  opacity: 1;
+}
+
+.form label svg {
+  width: clamp(1.5rem, 2vw, 2rem);
+  opacity: 0.5;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.form label:has(input[type="radio"]:checked) svg {
+  opacity: 1;
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.form button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--text);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.calculateError,
+.isPrimeError {
+  min-height: 1.2rem;
+  color: var(--error);
+  margin-bottom: 10px;
+  font-size: clamp(0.8rem, 1.1vw, 0.92rem);
+}
+
+.calculateResult,
+.isPrimeResult {
+  display: block;
+  margin-top: 14px;
+  min-height: 3rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.prime-not {
+  color: var(--error);
+}
+
+.prime {
+  color: var(--success);
+}
+
+.result-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: revealChar 0.22s ease forwards;
+}
+
+@keyframes revealChar {
+  from {
+    opacity: 0;
+    transform: translateX(-1px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
